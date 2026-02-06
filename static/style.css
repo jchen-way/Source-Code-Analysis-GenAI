@@ -1,0 +1,222 @@
+:root {
+  --bg-gradient-start: rgb(38, 51, 61);
+  --bg-gradient-mid: rgb(50, 55, 65);
+  --bg-gradient-end: rgb(33, 33, 78);
+  --chat-bg: rgba(0, 0, 0, 0.4);
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --user-msg-bg: #58cc71;
+  --bot-msg-bg: rgb(82, 172, 255);
+  --text-color: white;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: var(--bg-gradient-start);
+  background: -webkit-linear-gradient(
+    to right,
+    var(--bg-gradient-start),
+    var(--bg-gradient-mid),
+    var(--bg-gradient-end)
+  );
+  background: linear-gradient(
+    to right,
+    var(--bg-gradient-start),
+    var(--bg-gradient-mid),
+    var(--bg-gradient-end)
+  );
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card {
+  height: 600px;
+  border-radius: 15px !important;
+  background-color: var(--chat-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: 0 !important;
+  padding-bottom: 15px;
+}
+
+.card-footer {
+  border-radius: 0 0 15px 15px !important;
+  border-top: 0 !important;
+}
+
+.repo-input {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+.repo-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.repo-input:focus {
+  box-shadow: none !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.repo-icon {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-right: 0 !important;
+  color: white !important;
+}
+
+#ingestBtn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+#ingestBtn:disabled {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+
+.msg_card_body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 1rem;
+}
+
+.msg_card_body::-webkit-scrollbar {
+  width: 8px;
+}
+.msg_card_body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.msg_card_body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.type_msg {
+  background-color: var(--input-bg) !important;
+  border: 0 !important;
+  color: var(--text-color) !important;
+  height: 60px !important;
+}
+
+.type_msg:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.send_btn {
+  border-radius: 0 15px 15px 0 !important;
+  background-color: var(--input-bg) !important;
+  border: 0 !important;
+  color: var(--text-color) !important;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.send_btn:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.user_img,
+.user_img_msg {
+  border: 1.5px solid #f5f6fa;
+  object-fit: cover;
+}
+
+.user_img {
+  height: 70px;
+  width: 70px;
+}
+
+.user_img_msg {
+  height: 40px;
+  width: 40px;
+}
+
+.img_cont {
+  position: relative;
+  height: 70px;
+  width: 70px;
+}
+
+.img_cont_msg {
+  height: 40px;
+  width: 40px;
+}
+
+.online_icon {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-color: #4cd137;
+  border-radius: 50%;
+  bottom: 0.2em;
+  right: 0.4em;
+  border: 1.5px solid white;
+}
+
+.user_info {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+}
+
+.user_info span {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.user_info p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.msg_cotainer {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: var(--bot-msg-bg);
+  padding: 10px 15px;
+  position: relative;
+  color: white;
+  max-width: 75%;
+}
+
+.msg_cotainer_send {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 25px;
+  background-color: var(--user-msg-bg);
+  padding: 10px 15px;
+  position: relative;
+  color: white;
+  max-width: 75%;
+}
+
+.msg_time,
+.msg_time_send {
+  position: absolute;
+  bottom: -18px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  width: 100px;
+}
+
+.msg_time {
+  left: 0;
+}
+.msg_time_send {
+  right: 0;
+  text-align: right;
+}
